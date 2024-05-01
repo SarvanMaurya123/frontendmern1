@@ -59,49 +59,51 @@ const SignUp = () => {
     };
 
     return (
-        <div className={styles.signupForm}>
-            <h2>Sign Up</h2>
-            {isLoggedIn && (
-                <div className={styles.allreadyloginuser}>
-                    <p>Username & Email Already exist. Please log now</p>
-                </div>
-            )}
-            {!isLoggedIn && (
-                <form onSubmit={handleSubmit}>
-                    {error && (
-                        <div className={styles.errormessage}>
-                            <p>{error}</p>
+        <section className={styles.headersectionsignup}>
+            <div className={styles.signupForm2}>
+                <h2>Sign Up</h2>
+                {isLoggedIn && (
+                    <div className={styles.allreadyloginuser}>
+                        <p>Username & Email Already exist. Please log now</p>
+                    </div>
+                )}
+                {!isLoggedIn && (
+                    <form onSubmit={handleSubmit}>
+                        {error && (
+                            <div className={styles.errormessage}>
+                                <p>{error}</p>
+                            </div>
+                        )}
+                        <div>
+                            <label htmlFor="username">Name:</label>
+                            <input type="text" id="username" name="username" value={formData.username} onChange={handleChange} placeholder='Name' required />
                         </div>
-                    )}
-                    <div>
-                        <label htmlFor="username">Name:</label>
-                        <input type="text" id="username" name="username" value={formData.username} onChange={handleChange} placeholder='Name' required />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder='Email' required />
-                    </div>
-                    <div>
-                        <label htmlFor="tel">Phone:</label>
-                        <input type="tel" id="tel" name="tel" value={formData.tel} onChange={handleChange} placeholder='Phone Number' required />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password:</label>
-                        <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' required />
-                    </div>
-                    <div className={styles.checkboxitem}>
-                        <input type="checkbox" id="agree" name="agree" checked={formData.agree} onChange={handleChange} required />
-                        <label htmlFor="agree">I agree to the terms and conditions</label>
-                    </div>
-                    <div>
-                        <button type="submit">Sign Up</button>
-                    </div>
-                    <div>
-                        <p>Already signed up. Please login? <NavLink to="/login">Login</NavLink></p>
-                    </div>
-                </form>
-            )}
-        </div>
+                        <div>
+                            <label htmlFor="email">Email:</label>
+                            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder='Email' required />
+                        </div>
+                        <div>
+                            <label htmlFor="tel">Phone:</label>
+                            <input type="tel" id="tel" name="tel" value={formData.tel} onChange={handleChange} placeholder='Phone Number' required />
+                        </div>
+                        <div>
+                            <label htmlFor="password">Password:</label>
+                            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' required />
+                        </div>
+                        <div className={styles.checkboxitem}>
+                            <input type="checkbox" id="agree" name="agree" checked={formData.agree} onChange={handleChange} required />
+                            <label htmlFor="agree">I agree to the terms and conditions</label>
+                        </div>
+                        <div>
+                            <button type="submit">Sign Up</button>
+                        </div>
+                        <div>
+                            <p>Already signed up. Please login? <NavLink to="/login">Login</NavLink></p>
+                        </div>
+                    </form>
+                )}
+            </div>
+        </section>
     );
 }
 

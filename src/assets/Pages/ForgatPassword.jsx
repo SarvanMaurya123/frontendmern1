@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import styles from '../Pages/Home.module.css';
 const ForgetPassword = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
@@ -29,20 +29,23 @@ const ForgetPassword = () => {
     };
 
     return (
-        <div className="forget-password-container">
-            <h2>Forget Password</h2>
-            <form onSubmit={handleSubmit} className="forget-password-form">
-                <div className="form-group">
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                        placeholder='Enter Email' required />
-                </div>
-                <div>
-                    <button type="submit" className="send-email-button">Send Email</button>
-                </div>
-                {error && <div className="error-message">{error}</div>}
-            </form>
-        </div>
+        <section className={styles.headersection}>
+            <img src="/Programing.jpg" alt="Programming" />
+            <div className="forget-password-container">
+                <h2>Forget Password</h2>
+                <form onSubmit={handleSubmit} className="forget-password-form">
+                    <div className="form-group">
+                        <label>Email:</label>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                            placeholder='Enter Email' required />
+                    </div>
+                    <div>
+                        <button type="submit" className="send-email-button">Send Email</button>
+                    </div>
+                    {error && <div className="error-message">{error}</div>}
+                </form>
+            </div>
+        </section>
     );
 };
 
