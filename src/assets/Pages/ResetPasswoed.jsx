@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from '../Pages/Home.module.css';
+import { BACKEND } from '../../Url';
 const ResetPassword = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -12,7 +13,7 @@ const ResetPassword = () => {
     useEffect(() => {
         const checkTokenValidity = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/v1/reset-password/check/${token}`);
+                const response = await fetch(`${BACKEND}/api/v1/reset-password/check/${token}`);
                 if (!response.ok) {
                     setTokenValid(false);
                 }
@@ -35,7 +36,7 @@ const ResetPassword = () => {
             return;
         }
         try {
-            const response = await fetch(`https://mernfrontent.onrender.com/api/v1/reset-password/${token}`, {
+            const response = await fetch(`${BACKEND}/api/v1/reset-password/${token}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
