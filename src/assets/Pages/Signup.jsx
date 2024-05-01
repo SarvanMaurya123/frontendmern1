@@ -28,7 +28,7 @@ const SignUp = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:5000/Api/v1/User/RagisterUser', {
+            const response = await fetch('https://mernfrontent.onrender.com/Api/v1/User/RagisterUser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

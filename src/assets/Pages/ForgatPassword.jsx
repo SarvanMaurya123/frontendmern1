@@ -9,7 +9,7 @@ const ForgetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/forgot-password`, {
+            const response = await fetch(`https://mernfrontent.onrender.com/api/v1/forgot-password`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

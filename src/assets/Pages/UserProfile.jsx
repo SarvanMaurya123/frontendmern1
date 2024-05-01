@@ -32,7 +32,7 @@ const UserProfile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `http://localhost:5000/Api/v1/UpdateProfile/user`;
+            const url = `https://mernfrontent.onrender.com/Api/v1/UpdateProfile/user`;
             const token = localStorage.getItem('token'); // Assuming you store the token in localStorage
             const response = await axios.put(url, {
                 username: userData.username,

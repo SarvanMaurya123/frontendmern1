@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../ContextApi/ContApi';
 import axios from 'axios';
-import styles from "../Component/Header.module.css";
+//import styles from "../Component/Header.module.css";
 
 const Logout = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Logout = () => {
     const handleLogout = async () => {
         try {
             await axios.post(
-                `http://localhost:5000/Api/v1/Logout/LogoutUser`,
+                `https://mernfrontent.onrender.com/Api/v1/Logout/LogoutUser`,
                 {},
                 {
                     headers: {

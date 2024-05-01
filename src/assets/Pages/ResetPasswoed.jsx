@@ -35,7 +35,7 @@ const ResetPassword = () => {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:5000/api/v1/reset-password/${token}`, {
+            const response = await fetch(`https://mernfrontent.onrender.com/api/v1/reset-password/${token}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
