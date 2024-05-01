@@ -3,7 +3,7 @@ import styles from '../Component/Header.module.css';
 import { useAuth } from '../ContextApi/ContApi';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import BACKEN from "../Pages/Server"
 const UserProfile = () => {
     const { user } = useAuth();
     const [userData, setUserData] = useState({ username: '', email: '', tel: '' });
@@ -32,7 +32,7 @@ const UserProfile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `https://mernfrontent.onrender.com/Api/v1/UpdateProfile/user`;
+            const url = `${BACKEN}/Api/v1/UpdateProfile/user`;
             const token = localStorage.getItem('token'); // Assuming you store the token in localStorage
             const response = await axios.put(url, {
                 username: userData.username,

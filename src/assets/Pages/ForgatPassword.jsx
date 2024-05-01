@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Pages/Home.module.css';
+import BACKEN from "../Pages/Server"
 const ForgetPassword = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
@@ -9,7 +10,7 @@ const ForgetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://mernfrontent.onrender.com/api/v1/forgot-password`, {
+            const response = await fetch(`${BACKEN}/api/v1/forgot-password`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -3,7 +3,7 @@ import styles from '../Pages/Signup.module.css';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../ContextApi/ContApi'; // Import useAuth hook
 import { NavLink } from "react-router-dom";
-
+import BACKEN from '../Pages/Server'
 const SignUp = () => {
     const { isLoggedIn, user } = useAuth(); // Get isLoggedIn state from the authentication context
     const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ const SignUp = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://mernfrontent.onrender.com/Api/v1/User/RagisterUser', {
+            const response = await fetch(`${BACKEN}/Api/v1/User/RagisterUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

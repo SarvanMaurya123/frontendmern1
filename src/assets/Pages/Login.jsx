@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from '../ContextApi/ContApi';
 import axios from 'axios';
 import styless from '../Pages/Home.module.css';
-
+import BACKEN from "../Pages/Server"
 const Login = () => {
     const { login } = useAuth();
     const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `https://mernfrontent.onrender.com/Api/v1/Login/LoginUser`;
+            const url = `${BACKEN}/Api/v1/Login/LoginUser`;
 
             const response = await axios.post(url, formData);
             if (!response.data || !response.data.status.success) {
