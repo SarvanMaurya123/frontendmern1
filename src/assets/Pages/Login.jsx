@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import styles from '../Pages/Signup.module.css';
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from '../ContextApi/ContApi';
 import axios from 'axios';
-import styless from '../Pages/Home.module.css';
-import { BACKEND } from '../../Url'
+import styles from '../Pages/Signup.module.css'
+import styless from '../Pages/Home.module.css'
+import { BACKEND } from "../../Url"
 const Login = () => {
     const { login } = useAuth();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
+        name: '',
         agree: false
     });
     const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `${BACKEND}/Api/v1/Login/LoginUser`;
+            const url = `${BACKEND}/api/v1/login/LoginUser`;
 
             const response = await axios.post(url, formData);
             if (!response.data || !response.data.status.success) {
@@ -59,18 +60,18 @@ const Login = () => {
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} placeholder='Enter Password' required />
                     </div>
-                    <div className={styles.checkboxitem}>
+                    <div className={styles.cheackboxdata}>
                         <input type="checkbox" id="agree" name="agree" checked={formData.agree} onChange={handleChange} required />
                         <label htmlFor="agree">I agree to the terms and conditions</label>
                     </div>
-                    <div className={styles.ForgatPassword}>
+                    <div className={styles.forgetpassword}>
                         <NavLink to="/forgot-password">Forgot Password?</NavLink>
                     </div>
                     <div>
                         <button type="submit">Login now</button>
                     </div>
-                    <div className={styles.signupforloginpage}>
-                        <p>Please Singnup Now  <NavLink to="/signup">Signup</NavLink></p>
+                    <div>
+                        <p>Please Signup Now  <NavLink to="/signup">Signup</NavLink></p>
                     </div>
                 </form>
             </div>

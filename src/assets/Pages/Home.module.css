@@ -146,9 +146,21 @@ section.slidersection h2 {
     .headersection img {
         margin-top: 0px;
         height: 400px;
+
+    }
+
+    .headersection1 img {
+        margin-top: 0px;
+        height: 400px;
+
     }
 
     .headersection::before {
+        top: 70px;
+        height: 400px;
+    }
+
+    .headersection1::before {
         top: 70px;
         height: 400px;
     }

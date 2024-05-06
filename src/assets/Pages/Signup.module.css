@@ -146,8 +146,24 @@
     margin-bottom: 10px;
 }
 
+.cheackboxdata {
+    display: flex;
+    align-items: center;
+}
+
+.forgetpassword {
+    text-align: right;
+    padding: 10px 0px;
+}
+
 @media only screen and (max-width: 600px) {
     .signupForm {
-        top: 41%;
+        top: 43%;
+        min-width: 370px;
+    }
+
+    .signupForm2 {
+        top: 43%;
+        min-width: 370px;
     }
 }
